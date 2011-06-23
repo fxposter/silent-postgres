@@ -3,7 +3,7 @@ if Rails.env.development? || Rails.env.test?
   require "silent-postgres/railtie"
 
   module SilentPostgres
-    SILENCED_METHODS = %w(tables table_exists? indexes column_definitions pk_and_sequence_for last_insert_id)
+    SILENCED_METHODS = %w(tables table_exists? indexes column_definitions pk_and_sequence_for last_insert_id column_spatial_info)
 
     def self.included(base)
       SILENCED_METHODS.each do |m|
